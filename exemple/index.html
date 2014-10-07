@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>angular-mt-calendar sample</title>
+
+    <link href='../angular-mt-calendar.css' rel='stylesheet' type='text/css'>
+</head>
+<body ng-app="SampleApp" ng-controller="mainController">
+    <H2>{{title}}</H2>
+    <div style="width:500px">
+        <angular-mt-calendar ng-model="calendarData" data-config="calendarConfig"></angular-mt-calendar>
+    </div>
+    <script type="text/javascript" src="../bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="../bower_components/moment/moment.js"></script>
+    <script type="text/javascript" src="../angular-mt-calendar.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+</body>
+</html>
