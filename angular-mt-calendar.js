@@ -10,7 +10,7 @@
 'use strict';
 
 angular.module('angular.mt.calendar', [])
-    .directive('angularMtCalendar', [ function() {
+    .directive('mtCalendar', [ function() {
         return {
             restrict: 'AE',
             scope: {
