@@ -1,6 +1,6 @@
 /*
- * angular-mt-calendar
- * https://github.com/MangoTools/angular-mt-calendar
+ * mt-calendar
+ * https://github.com/MangoTools/mt-calendar
 
  * Version:
  * License: MIT
@@ -20,7 +20,7 @@ angular.module('angular.mt.calendar', [])
             },
             replace: true,
             template:
-                '<div class="angular-mt-calendar">' +
+                '<div class="mt-calendar">' +
                 '   <div class="mg-header">' +
                 '       <h2 class="mg-title-left"><a class="previews-month" ng-click="gotoPreviewsMonth($event)">&laquo; </a></h2>' +
                 '       <h2 class="mg-title-right"><a class="next-month" ng-click="gotoNextMonth($event)"> &raquo;</a></h2>' +
@@ -222,7 +222,7 @@ angular.module('angular.mt.calendar', [])
             }
         };
     }])
-    .directive('mangoDateFilter', [ function() {
+    .directive('mtDateFilter', [ function() {
         return {
             restrict: 'A',
             require: 'ngModel',
@@ -248,7 +248,7 @@ angular.module('angular.mt.calendar', [])
             }
         }
     }])
-    .directive('mangoDatePicker', ['$document', function($document) {
+    .directive('mtDatePicker', ['$document', function($document) {
         return {
             restrict: 'AE',
             scope: {
@@ -260,20 +260,20 @@ angular.module('angular.mt.calendar', [])
             replace:true,
             transclude: true,
             template:
-                '<div class="mango-date-picker">' +
+                '<div class="mt-date-picker">' +
                 '   <div ng-transclude></div>' +
-                '   <div class="mango-date-picker-popup" ng-if="isOpen">' +
-                '       <angular-mt-calendar ng-model="calendar" data-config="calendarConfig" last-selection="model"></angular-mt-calendar>' +
+                '   <div class="mt-date-picker-popup" ng-if="isOpen">' +
+                '       <mt-calendar ng-model="calendar" data-config="calendarConfig" last-selection="model"></mt-calendar>' +
                 '   </div>' +
                 '</div>',
 
             link: function postLink(scope, element, attrs, $parse) {
-                scope.uniqueId = 'mango-date-picker-' + scope.$id + '-' + Math.floor(Math.random() * 10000);
+                scope.uniqueId = 'mt-date-picker-' + scope.$id + '-' + Math.floor(Math.random() * 10000);
                 element.addClass(scope.uniqueId);
 
                 $document.bind('click', function(event) {
                     var $datePicker= $('.'+scope.uniqueId);
-                    var $popup =$datePicker.find('.mango-date-picker-popup');
+                    var $popup =$datePicker.find('.mt-date-picker-popup');
                     if (!$popup.find(event.target).length &&
                         $popup!==$(event.target)) {
                         // Hide the menus.

@@ -1,118 +1,118 @@
 
-.angular-mt-calendar table{
+.mt-calendar table{
     min-height: 300px;
 }
 
-.angular-mt-calendar table{
+.mt-calendar table{
     width:100%;
 }
 
-.angular-mt-calendar th{
+.mt-calendar th{
     width: 14.29%;
     text-transform: capitalize;
     text-align: center;
 }
 
-.angular-mt-calendar .mg-title{
+.mt-calendar .mg-title{
     width: 90%;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
 }
 
-.angular-mt-calendar .mg-header a{
+.mt-calendar .mg-header a{
     cursor:  pointer;
 }
 
-.angular-mt-calendar .mg-title-left{
+.mt-calendar .mg-title-left{
     float: left;
 }
 
-.angular-mt-calendar .mg-title-right{
+.mt-calendar .mg-title-right{
     float: right;
 }
 
-.angular-mt-calendar td {
+.mt-calendar td {
     min-height: 52px;
     vertical-align: top;
 }
 
-.angular-mt-calendar tr, .angular-mt-calendar th{
+.mt-calendar tr, .mt-calendar th{
     border: 1px solid #ddd;
 }
-.angular-mt-calendar td.selectable{
+.mt-calendar td.selectable{
     border: 1px solid #ddd;
 }
 
-.angular-mt-calendar .mg-number {
+.mt-calendar .mg-number {
     float: right;
     padding: 0 2px;
 }
 
-.angular-mt-calendar .mg-day:first-child .mg-number {
+.mt-calendar .mg-day:first-child .mg-number {
     font-weight: bold;
 }
 
-.angular-mt-calendar .mg-day-text {
+.mt-calendar .mg-day-text {
     width: 100%;
     text-align: center;
     display: inline-block;
     font-weight: bold;
     font-size: 80%;
 }
-.angular-mt-calendar .mg-week-text {
+.mt-calendar .mg-week-text {
     width: 100%;
     text-align: center;
     display: inline-block;
     position: absolute;
     font-weight: bold;
 }
-.angular-mt-calendar .other-month{
+.mt-calendar .other-month{
     opacity: 0.3;
 }
 
-.angular-mt-calendar .today{
+.mt-calendar .today{
     background: #fcf8e3;
     opacity: 0.6;
 }
 
-.angular-mt-calendar tr.selectable.unselected:hover td{
+.mt-calendar tr.selectable.unselected:hover td{
      cursor:  pointer;
      background: #3598db;
     color: #ffffff;
 }
 
-.angular-mt-calendar td.selectable.unselected:hover{
+.mt-calendar td.selectable.unselected:hover{
     cursor:  pointer;
     background: #3598db;
     color: #ffffff;
 }
 
-.angular-mt-calendar tr.selectable.selected:hover td{
+.mt-calendar tr.selectable.selected:hover td{
     cursor:  pointer;
     background: forestgreen;
     color: #ffffff;
 }
 
-.angular-mt-calendar td.selectable.selected:hover{
+.mt-calendar td.selectable.selected:hover{
     cursor:  pointer;
     background: green;
     color: #ffffff;
 }
 
-.angular-mt-calendar td.unselectable:hover{
+.mt-calendar td.unselectable:hover{
     cursor:  not-allowed;
 }
 
-.angular-mt-calendar tr.selected td{
+.mt-calendar tr.selected td{
     background-color: mediumseagreen;
 }
 
-.angular-mt-calendar td.selected{
+.mt-calendar td.selected{
     background: mediumseagreen;
 }
 
-.mango-date-picker-popup{
+.mt-date-picker-popup{
     position: absolute;
     width:280px;
     background-color: white;
@@ -120,14 +120,14 @@
     border: solid 1px #000000;
     z-index: 100;
 }
-.mango-date-picker-popup .angular-mt-calendar{
+.mt-date-picker-popup .mt-calendar{
     font-size: 0.9em;
 }
-.mango-date-picker-popup .angular-mt-calendar h2{
+.mt-date-picker-popup .mt-calendar h2{
     font-size: 1.8em;
 }
 
-.mango-date-picker input{
+.mt-date-picker input{
     cursor: pointer!important;
     background-color: #ffffff!important;
 }
