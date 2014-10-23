@@ -52,6 +52,7 @@ angular.module('angular.mt.calendar', [])
                 $scope.config.firstDayOfWeek = $scope.config.firstDayOfWeek || 1;
                 $scope.config.minHeight = $scope.config.minHeight || '300px';
                 $scope.config.singleSelect = $scope.config.singleSelect || false;
+                $scope.config.goToselection = $scope.config.goToselection || false;
 
                 $scope.firstDayOfWeek=$scope.config.firstDayOfWeek;
                 $scope.lastDayOfWeek=($scope.firstDayOfWeek+6)%7;
@@ -68,7 +69,7 @@ angular.module('angular.mt.calendar', [])
                 var now = moment.utc();
 
                 //if it's a single date-picker, go directly to this date and not to today
-                if(angular.isDefined($scope.lastSelection) && angular.isDefined($scope.lastSelection._isAMomentObject)){
+                if($scope.config.goToselection && angular.isDefined($scope.lastSelection) && angular.isDefined($scope.lastSelection._isAMomentObject)){
                     $scope.base = moment.utc({y: $scope.lastSelection.year(), M: $scope.lastSelection.month(), d: 1});
                 }
                 else{
