@@ -105,9 +105,7 @@ angular.module('angular.mt.calendar', [])
                         var customWeekClass={};
 
                         customWeekClass['selectable']= true;   // Selectable par default
-                        customWeekClass['unselectable']= false;
                         customWeekClass['selected']= false;
-                        customWeekClass['unselected']= true;
 
                         var week={
                             date: firstWeekDay,
@@ -121,9 +119,7 @@ angular.module('angular.mt.calendar', [])
                             var customDayClass={};
 
                             customDayClass['selectable']= false;
-                            customDayClass['unselectable']= true;
                             customDayClass['selected']= false;
-                            customDayClass['unselected']= true;
                             customDayClass['otherMonth']= false;
                             customDayClass['today']= false;
 
@@ -178,12 +174,10 @@ angular.module('angular.mt.calendar', [])
 
                     if(day.class.selectable){
                         day.class['selected'] = !day.class['selected'];
-                        day.class['unselected'] = !day.class['selected'];
                     }
 
                     if(week.class.selectable){
                         week.class['selected'] = !week.class['selected'];
-                        week.class['unselected'] = !week.class['selected'];
                     }
 
 
@@ -194,13 +188,11 @@ angular.module('angular.mt.calendar', [])
                     if($scope.config.singleSelect && $scope.lastSelected!==null){
                         if(day.class['selected'] || week.class['selected']){
                             $scope.lastSelected.class['selected'] = false;
-                            $scope.lastSelected.class['unselected'] = true;
                         }
                     }
 
                         // In case of modifications
                     if(day.class.selectable){
-                        day.class['unselected'] = !day.class['selected'];
                         if(day.class['selected']){
                             $scope.lastSelected = day;
                         }
@@ -209,7 +201,6 @@ angular.module('angular.mt.calendar', [])
                         }
                     }
                     else if(week.class.selectable){
-                        week.class['unselected'] = !week.class['selected'];
                         if(week.class['selected']){
                             $scope.lastSelected = week;
                         }
@@ -277,7 +268,7 @@ angular.module('angular.mt.calendar', [])
                     if (!$popup.find(event.target).length &&
                         $popup!==$(event.target)) {
                         // Hide the menus.
-                        //scope.isOpen = false;
+                        scope.isOpen = false;
                         scope.$apply();
                     }
                 })
@@ -298,7 +289,6 @@ angular.module('angular.mt.calendar', [])
 
                         for(var i=0; i<data.weeks.length; i++){
                             data.weeks[i].class.selectable=false;
-                            data.weeks[i].class.unselectable=true;
 
                             for(var j=0; j<data.weeks[i].days.length; j++){
                                 var day = data.weeks[i].days[j];
@@ -309,8 +299,6 @@ angular.module('angular.mt.calendar', [])
                                 if(angular.isDefined($scope.model) && day.class.selectable && day.date.isSame(modelDate, 'day')){
                                     day.class.selected=true;
                                 }
-                                day.class.unselectable=!day.class.selectable;
-                                day.class.unselected=!day.class.selected;
                             }
                         }
                     },

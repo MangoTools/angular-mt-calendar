@@ -76,13 +76,13 @@
     opacity: 0.6;
 }
 
-.mt-calendar tr.selectable.unselected:hover td{
+.mt-calendar tr.selectable:not(.selected):hover td{
      cursor:  pointer;
      background: #3598db;
     color: #ffffff;
 }
 
-.mt-calendar td.selectable.unselected:hover{
+.mt-calendar td.selectable:not(.selected):hover{
     cursor:  pointer;
     background: #3598db;
     color: #ffffff;
@@ -100,7 +100,7 @@
     color: #ffffff;
 }
 
-.mt-calendar td.unselectable:hover{
+.mt-calendar td:not(.selectable):hover{
     cursor:  not-allowed;
 }
 
