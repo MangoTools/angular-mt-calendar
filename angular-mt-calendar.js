@@ -31,7 +31,7 @@ angular.module('angular.mt.calendar', [])
                 '           <thead><tr><th ng-repeat="header in headers">{{header}}</th></tr></thead>' +
                 '           <tbody>' +
                 '               <tr ng-repeat="week in model.weeks" class="mg-week" ng-class="week.class">' +
-                '                   <td ng-repeat="day in week.days" class="mg-day" ng-class="day.class" ng-click="onClick($event, day, week)">' +
+                '                   <td ng-repeat="day in week.days" class="mg-day" ng-class="day.class" ng-click="onClick($event, day, week, $index)">' +
                 '                       <div><div class="mg-number">{{day.date.date()}}</div></div>' +
                 '                       <div class="mg-day-text">{{day.text}}</div>' +
                 '                       <div class="mg-week-text" ng-if="$first">{{week.text}}</div>' +
@@ -165,7 +165,7 @@ angular.module('angular.mt.calendar', [])
                     $scope.base.add(1, 'months');
                 }
 
-                $scope.onClick = function(event, day, week){
+                $scope.onClick = function(event, day, week, dayIndex){
                     event.preventDefault();
                     event.stopPropagation();
 
@@ -181,9 +181,8 @@ angular.module('angular.mt.calendar', [])
                         week.class['selected'] = !week.class['selected'];
                     }
 
-
                     if(angular.isFunction($scope.config.onDayClick)){
-                        $scope.config.onDayClick(day, week);
+                        $scope.config.onDayClick(day, week, dayIndex);
                     }
 
                     if($scope.config.singleSelect && $scope.lastSelected!==null){
