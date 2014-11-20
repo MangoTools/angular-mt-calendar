@@ -33,7 +33,7 @@
 }
 
 .mt-calendar td {
-    min-height: 52px;
+    /*min-height: 52px;*/
     vertical-align: top;
 }
 
