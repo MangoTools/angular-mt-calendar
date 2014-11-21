@@ -1,7 +1,7 @@
 {
   "name": "angular-mt-calendar",
   "main": "angular-mt-calendar.js",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "homepage": "https://github.com/MangoTools/angular-mt-calendar",
   "authors": [
     "adidoo <adrien@mango.tools>"

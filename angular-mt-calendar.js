@@ -132,7 +132,7 @@ angular.module('angular.mt.calendar', [])
                             }
 
                             week.days.push({
-                                date: moment(j),
+                                date: moment.utc(j),
                                 text:'',
                                 class: customDayClass
                             });
@@ -155,7 +155,7 @@ angular.module('angular.mt.calendar', [])
                 $scope.gotoPreviewsMonth = function(event){
                     event.preventDefault();
                     event.stopPropagation();
-                    if($scope.config.canGoBeforeToday || moment().isBefore(moment($scope.base).subtract(1,'month'), 'months')){
+                    if($scope.config.canGoBeforeToday || moment.utc().isBefore(moment.utc($scope.base), 'months')){
                         $scope.base.subtract(1, 'months');
                     }
                 }
