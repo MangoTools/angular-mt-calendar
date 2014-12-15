@@ -75,7 +75,11 @@ angular.module('angular.mt.calendar', [])
                 else{
                     $scope.base = moment.utc({y:now.year(), M:now.month(), d:1});
                 }
-
+                $scope.$watch('lastSelection', function(){
+                    if($scope.config.goToSelection && angular.isDefined($scope.lastSelection) && angular.isDefined($scope.lastSelection._isAMomentObject)){
+                        $scope.base = moment.utc({y: $scope.lastSelection.year(), M: $scope.lastSelection.month(), d: 1});
+                    };
+                });
                 var updateTable = function(base){
 
                     var firstMonthDay = moment.utc(base);
