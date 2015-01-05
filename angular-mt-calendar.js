@@ -95,13 +95,13 @@ angular.module('angular.mt.calendar', [])
                     // Last day of the week that include the last day of the month
                     var lastDay = moment.utc(lastMonthDay).day(($scope.firstDayOfWeek+6)%7); // End on friday
 
-                    var model={
-                        firstDay:firstDay,
-                        lastDay: lastDay,
-                        firstMonthDay: firstMonthDay,
-                        lastMonthDay: lastMonthDay,
-                        weeks: []
-                    };
+                    $scope.model.firstDay=firstDay;
+                    $scope.model.lastDay=lastDay;
+                    $scope.model.firstMonthDay=firstMonthDay;
+                    $scope.model.lastMonthDay=lastMonthDay;
+                    $scope.model.weeks=[];
+                    $scope.model.isReady=false;
+
                     for(var i=moment.utc(firstDay); i.isBefore(lastDay); i.add(7,'d')) { // For each week
 
                         var firstWeekDay = moment.utc(i);
@@ -141,10 +141,10 @@ angular.module('angular.mt.calendar', [])
                                 class: customDayClass
                             });
                         }
-                        model.weeks.push(week);
+                        $scope.model.weeks.push(week);
+                        $scope.model.isReady = true;
                     }
 
-                    $scope.model = model;
                     //console.log('calendarData: ' + angular.isDefined($scope.model));
 
                     if(angular.isFunction($scope.config.onTableUpdate)){
