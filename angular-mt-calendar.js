@@ -33,8 +33,8 @@ angular.module('angular.mt.calendar', [])
                 '               <tr ng-repeat="week in model.weeks" class="mg-week" ng-class="week.class">' +
                 '                   <td ng-repeat="day in week.days" class="mg-day" ng-class="day.class" ng-click="onClick($event, day, week, $index)">' +
                 '                       <div><div class="mg-number">{{day.date.date()}}</div></div>' +
-                '                       <div class="mg-day-text">{{day.text}}</div>' +
-                '                       <div class="mg-week-text" ng-if="$first">{{week.text}}</div>' +
+                '                       <div class="mg-day-text" ng-bind-html="day.text"></div>' +
+                '                       <div class="mg-week-text" ng-if="$first" ng-bind-html="week.text"></div>' +
                 '                   </td>' +
                 '               </tr>' +
                 '           </tbody>' +
